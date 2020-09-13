@@ -7,6 +7,7 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import ForgotPassword from './pages/ForgotPassword';
 import Users from './pages/Users';
+import Footer from './components/Footer';
 
 import GlobalStyles from './styles/GlobalStyles';
 
@@ -16,7 +17,6 @@ function App() {
       <GlobalStyles />
 
       <Header />
-      
       <Routes>
         <Route path="/" element={<Preload />} />
         <Route path="/signin" element={<SignIn />} />
@@ -24,6 +24,7 @@ function App() {
         <Route path="/forgot" element={<ForgotPassword />} />
         <Route path="/users" element={<Users />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
