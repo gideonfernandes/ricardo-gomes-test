@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import Header from './components/Header';
 import Preload from './pages/Preload';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
@@ -14,6 +15,8 @@ function App() {
     <BrowserRouter>
       <GlobalStyles />
 
+      <Header />
+      
       <Routes>
         <Route path="/" element={<Preload />} />
         <Route path="/signin" element={<SignIn />} />
