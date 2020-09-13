@@ -1,17 +1,23 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { Container, AppLogo, Menu, LogoutIcon } from './styles';
 
 const Header: React.FC = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+
+    if (token) {
+      setUser(true);
+    };
+  }, []);
 
   const UserMenu: React.FC = () => {
     return (
       <ul>
-        <li>
-          <Link to="/users">Ver usuários</Link>
-        </li>
         <li>
           <button onClick={handleLogout}>
             <LogoutIcon />
@@ -20,6 +26,7 @@ const Header: React.FC = () => {
       </ul>
     );
   };
+
   const GuestMenu: React.FC = () => {
     return (
       <ul>
@@ -34,7 +41,9 @@ const Header: React.FC = () => {
   };
 
   const handleLogout = () => {
-    
+    localStorage.removeItem('token');
+
+    window.location.reload();
   };
 
   return (

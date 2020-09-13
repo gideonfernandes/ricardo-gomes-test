@@ -28,6 +28,7 @@ export const Container = styled.div`
     border-radius: 4px;
     color: var(--secondary);
     background: var(--primary);
+    cursor: pointer;
   }
 
   > span a {
