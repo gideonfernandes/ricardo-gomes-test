@@ -17,7 +17,7 @@ export const Container = styled.div`
     border-radius: 4px;
     margin: 8px 4px;
     padding: 8px;
-    color: var(--secondary);
+    color: var(--gray-dark);
     background: var(--gray-light);
   }
 
